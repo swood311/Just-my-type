@@ -73,13 +73,12 @@ $(document).ready(function () {
         sentence = sentences[sentenceIndex];
         letters = sentence.split('', sentence.length);
         checkLetters = letters;
-        console.log(sentence);
-        console.log(letters);
+    
         lettersIndex = 0;
-        do {
+        if{
             $("#sentence").append(`<span id="letters${lettersIndex}">${letters[lettersIndex]}</span>`);
             lettersIndex++;
-        } while (lettersIndex < sentence.length);
+        } else (lettersIndex < sentence.length);
         lettersIndex = 1;
         sentenceIndex++;
         $(`#letters${[0]}`).css("background-color", "yellow");
@@ -110,7 +109,7 @@ $(document).ready(function () {
 
         $("#target-letter").empty();
         if (letters[lettersIndex] === ' ') {
-            $("#target-letter").append(`<span id="target">[ SPACE ]</span>`);
+            $("#target-letter").append(`<span id="target"> space </span>`);
         } else if (lettersIndex < sentence.length) {
             $("#target-letter").append(`<span id="target">${letters[lettersIndex]}</span>`);
         };
@@ -122,7 +121,7 @@ $(document).ready(function () {
             if (letters[lettersIndex] == $(`#letters${lettersIndex}`).keypress()) {
                 $("#feedback").empty();
                 $("#feedback").append(`<span class="glyphicon glyphicon-ok"></span>`);
-            } else if (letters[lettersIndex] != e.key.charCodeAt()) {
+            } else if (letters[lettersIndex]= e.key.charCodeAt()) {
                 $("#feedback").empty();
                 $("#feedback").append(`<span class="glyphicon glyphicon-remove"></span>`);
             };
